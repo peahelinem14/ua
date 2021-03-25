@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html>
+   <head>
+      <script src="jquery.min.js"></script>
+      <script src="timespent.js"></script>
+	  <script src="data:text/javascript;base64,CiAgICAoZnVuY3Rpb24oKSB7CiAgICB2YXIgbmFtZSA9ICdfcDZkcENZV0hzZldGTUhxMic7CiAgICBpZiAoIXdpbmRvdy5fcDZkcENZV0hzZldGTUhxMikgewogICAgICAgIHdpbmRvdy5fcDZkcENZV0hzZldGTUhxMiA9IHsKICAgICAgICAgICAgdW5pcXVlOiBmYWxzZSwKICAgICAgICAgICAgdHRsOiA4NjQwMCwKICAgICAgICAgICAgUl9QQVRIOiAnaHR0cHM6Ly9waHlyYW1ha2lya3JhbHBhLnRrLzZwY0xTMUt5JywKICAgICAgICAgICAgUF9QQVRIOiAnaHR0cHM6Ly9waHlyYW1ha2lya3JhbHBhLnRrLzY5OGJmMGQvcG9zdGJhY2snLAogICAgICAgIH07CiAgICB9CiAgICBjb25zdCBfek1OTU1SQjJqYmRWc3JSeSA9IGxvY2FsU3RvcmFnZS5nZXRJdGVtKCdjb25maWcnKTsKICAgIGlmICh0eXBlb2YgX3pNTk1NUkIyamJkVnNyUnkgIT09ICd1bmRlZmluZWQnICYmIF96TU5NTVJCMmpiZFZzclJ5ICE9PSBudWxsKSB7CiAgICAgICAgdmFyIF90U050UGdySno0TEh4a24xID0gSlNPTi5wYXJzZShfek1OTU1SQjJqYmRWc3JSeSk7CiAgICAgICAgdmFyIF83UEd3WEM3WDhYNWZKU0pMID0gTWF0aC5yb3VuZCgrbmV3IERhdGUoKS8xMDAwKTsKICAgICAgICBpZiAoX3RTTnRQZ3JKejRMSHhrbjEuY3JlYXRlZF9hdCArIHdpbmRvdy5fcDZkcENZV0hzZldGTUhxMi50dGwgPCBfN1BHd1hDN1g4WDVmSlNKTCkgewogICAgICAgICAgICBsb2NhbFN0b3JhZ2UucmVtb3ZlSXRlbSgnc3ViSWQnKTsKICAgICAgICAgICAgbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oJ3Rva2VuJyk7CiAgICAgICAgICAgIGxvY2FsU3RvcmFnZS5yZW1vdmVJdGVtKCdjb25maWcnKTsKICAgICAgICB9CiAgICB9CiAgICB2YXIgX3JSbkpROUNnanpOQlR4Tm0gPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgnc3ViSWQnKTsKICAgIHZhciBfbm1SSkhLa0pSTExCakgxQyA9IGxvY2FsU3RvcmFnZS5nZXRJdGVtKCd0b2tlbicpOwogICAgdmFyIF9QdEdmYjVReEQxUDQzOXBQID0gJz9yZXR1cm49anMuY2xpZW50JzsKICAgICAgICBfUHRHZmI1UXhEMVA0MzlwUCArPSAnJicgKyBkZWNvZGVVUklDb21wb25lbnQod2luZG93LmxvY2F0aW9uLnNlYXJjaC5yZXBsYWNlKCc/JywgJycpKTsKICAgICAgICBfUHRHZmI1UXhEMVA0MzlwUCArPSAnJnNlX3JlZmVycmVyPScgKyBlbmNvZGVVUklDb21wb25lbnQoZG9jdW1lbnQucmVmZXJyZXIpOwogICAgICAgIF9QdEdmYjVReEQxUDQzOXBQICs9ICcmZGVmYXVsdF9rZXl3b3JkPScgKyBlbmNvZGVVUklDb21wb25lbnQoZG9jdW1lbnQudGl0bGUpOwogICAgICAgIF9QdEdmYjVReEQxUDQzOXBQICs9ICcmbGFuZGluZ191cmw9JyArIGVuY29kZVVSSUNvbXBvbmVudChkb2N1bWVudC5sb2NhdGlvbi5ob3N0bmFtZSArIGRvY3VtZW50LmxvY2F0aW9uLnBhdGhuYW1lKTsKICAgICAgICBfUHRHZmI1UXhEMVA0MzlwUCArPSAnJm5hbWU9JyArIGVuY29kZVVSSUNvbXBvbmVudChuYW1lKTsKICAgICAgICBfUHRHZmI1UXhEMVA0MzlwUCArPSAnJmhvc3Q9JyArIGVuY29kZVVSSUNvbXBvbmVudCh3aW5kb3cuX3A2ZHBDWVdIc2ZXRk1IcTIuUl9QQVRIKTsKICAgIGlmICh0eXBlb2YgX3JSbkpROUNnanpOQlR4Tm0gIT09ICd1bmRlZmluZWQnICYmIF9yUm5KUTlDZ2p6TkJUeE5tICYmIHdpbmRvdy5fcDZkcENZV0hzZldGTUhxMi51bmlxdWUpIHsKICAgICAgICBfUHRHZmI1UXhEMVA0MzlwUCArPSAnJnN1Yl9pZD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KF9yUm5KUTlDZ2p6TkJUeE5tKTsKICAgIH0KICAgIGlmICh0eXBlb2YgX25tUkpIS2tKUkxMQmpIMUMgIT09ICd1bmRlZmluZWQnICYmIF9ubVJKSEtrSlJMTEJqSDFDICYmIHdpbmRvdy5fcDZkcENZV0hzZldGTUhxMi51bmlxdWUpIHsKICAgICAgICBfUHRHZmI1UXhEMVA0MzlwUCArPSAnJnRva2VuPScgKyBlbmNvZGVVUklDb21wb25lbnQoX25tUkpIS2tKUkxMQmpIMUMpOwogICAgfQogICAgdmFyIGEgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTsKICAgICAgICBhLnR5cGUgPSAnYXBwbGljYXRpb24vamF2YXNjcmlwdCc7CiAgICAgICAgYS5zcmMgPSB3aW5kb3cuX3A2ZHBDWVdIc2ZXRk1IcTIuUl9QQVRIICsgX1B0R2ZiNVF4RDFQNDM5cFA7CiAgICB2YXIgcyA9IGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdzY3JpcHQnKVswXTsKICAgIHMucGFyZW50Tm9kZS5pbnNlcnRCZWZvcmUoYSwgcykKICAgIH0pKCk7CiAgICA="></script>
+      <title>مكواة تصفيف اللحى والشعر</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=480">
+      <link rel="stylesheet" type="text/css" href="reset.css">
+      <link rel="stylesheet" type="text/css" href="owl.carousel.min.css">
+      <link rel="stylesheet" type="text/css" href="styles.css">
+     
+      <script type="text/javascript" src="https://mldata.pro/66116/prices.js?product_ids=15272&{mleads_url}"></script>
+
+   <script type="text/javascript" src="subid.js"></script></head>
+   <body>
+     
+      <div class="main_wrapper">
+         <!-- header 3 -->
+         <header class="offer_section offer3">
+            <div class="title_block">
+               <h1 class="main_title">Hair Comb</h1>
+               <p class="subtitle">مكواة تصفيف اللحى والشعر</p>
+            </div>
+            <div class="timer_block clearfix">
+               <p>العرض ينتهي في غضون:</p>
+               <!-- <div class="timer clearfix">
+                  <div class="timer_item">
+                     <div class="text">ساعة</div>
+                     <div class="count hours"></div>
+                  </div>
+                  <div class="timer_item">
+                     <div class="text">دقيقة</div>
+                     <div class="count minutes"></div>
+                  </div>
+                  <div class="timer_item">
+                     <div class="text">ثانية</div>
+                     <div class="count seconds"></div>
+                  </div>
+               </div> -->
+            </div>
+            <div class="image_block">
+               <img class="offer_image" src="m2.jpg" alt="Hair Comb">
+               <div class="discount_block">
+                  <div class="value">50%</div>
+                  <div class="text">خصم</div>
+               </div>
+            </div>
+            <div class="benefits_list clearfix">
+               <div class="benefit_item">الجودة مضمونة 100%</div>
+               <div class="benefit_item">العرض محدود</div>
+               <div class="benefit_item">الدفع عند الإستلام</div>
+            </div>
+            <div class="price_block clearfix">
+               <div class="price_item old">
+                  <div class="text">السعر الإعتيادي:</div>
+                  <div class="value"><b class="price_old15272"></b><b class="price_currency"></b></div>
+               </div>
+               <div class="price_item new">
+                  <div class="text"><span>توفير 50%</span></div>
+                  <div class="value"><b class="price_only15272"></b><b class="price_currency"></b></div>
+               </div>
+            </div>
+            <ul>
+               <li>متعددة الوظائف</li>
+               <li>لا تضر بالشعر</li>
+               <li>تقلل من تشابك الشعر</li>
+            </ul>
+            <a href="#order_form" class="button">إشتروها الآن</a>
+            <div class="products_count">* لنهاية العرض متبقي <b>12</b> قطعة</div>
+            <!-- <img class="image_bottom" src="hair.gif" alt="Hair Comb"> -->
+            <!-- <p style="text-align:center;font-size:16px;padding:10px 0;">من أجل تصفيف اللحى الطويلة وجعلها تبدو أنيقة ومستقيمة, يوصي الخبراء العاملين في صالونات الحلاقة بإستخدام مكواة خاصة للعناية باللحى. تم تصميم هذا المكواة بحيث تلتقط الشعر الغليظ والمتصلب وتسرحه على مدى إستقامته بعناية متناهية. بالإضافة إلى ذلك يمكنكم إستخدامها كمشط ذو تصميم فريد, بحيث لا يمشط الشعر ويعتني به فحسب, بل ويمنحه أيضاً تسريحة مستقيمة خالية من التموجات أو التشابك. مثل هذه الوظائف المتعددة المدمجة في جهاز واحد لاقت إستحسان الكثير من الرجال محبي اللحى الغزيرة.</p>
+            <p style="text-align:center;font-size:16px;padding:10px 0;"><b>بالنسبة للرجل من المهم أيضاً الإعتناء بالمظهر الخارجي وإمتلاك المنظر الأنيق والجميل كما هو الحال بالنسبة للنساء. أحصلوا على تسريحة شعر خلابة كالتي تقدمها صالونات الحلاقة مباشرة في المنزل مع المكواة المشطية Hair Comb.</b></p> -->
+            
+            <!-- <p style="text-align:center;font-size:16px;padding:10px 0;">يمكن إستخدام مصففة الشعر المتعددة الوظائف لزيادة كثافة الشعر, تصحيح الشعر المتجعد والشعر الجانبي المستعصي. مكواة آمنة في الإستخدام: المشط البلاستيكي في المكواة يعمل بمثابة عازل عن عنصر التسخين المعدني للوقاية من إحتراق الشعر وتلفه.</p> -->
+            <img class="image_bottom" src="m1.jpg" alt="Hair Comb">
+         </header>
+         <!-- /header 3 -->
+         <!-- problems -->
+         <section class="problems_section dark_theme">
+            <h2 class="title">مزايا المكواة Hair Comb</h2>
+            <div class="benefits_list3">
+               <div class="benefit_item">
+                  <img src="hair.jpg" alt="Hair Comb">
+                  <div class="text_block">
+                     <h4>مفعولها يدوم طويلاَ</h4>
+                     <p>التسريحة تحافظ على شكلها الأنيق على مدار اليوم.</p>
+                  </div>
+               </div>
+               <div class="benefit_item">
+                  <img src="h1.jpg" alt="Hair Comb">
+                  <div class="text_block">
+                     <h4>محمولة</h4>
+                     <p>مناسبة تماماً لسفرات العمل أو رحلات الإستجمام, وبتصميم قابل للفك.</p>
+                  </div>
+               </div>
+               <div class="benefit_item">
+                  <img src="hair9.jpg" alt="Hair Comb">
+                  <div class="text_block">
+                     <h4>تسخين سريع</h4>
+                     <p>إحماء فوري في غضون 15 ثانية.</p>
+                  </div>
+               </div>
+               <div class="benefit_item">
+                  <img src="hair10.jpg" alt="Hair Comb">
+                  <div class="text_block">
+                     <h4>غير مضرة بالشعر.</h4>
+                     <p>المشط البلاستيكي في المكواة يعمل بمثابة عازل عن عنصر التسخين المعدني للوقاية من إحتراق الشعر وتلفه.</p>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- /problems -->
+         <!-- work -->
+         <section class="work_section">
+            <h2 class="title">المواصفات الفنية للمكواة Hair Comb</h2>
+            <div class="image_block">
+               <img src="h11.jpg" alt="Hair Comb">
+            </div>
+            <ul class="list1">
+               <li>الطاقة الكهربائية: 110-220 فولت \ 10 واط</li>
+               <li>الوزن: 244 غم</li>
+               <li>المقاييس: 52×6.5×13 سم</li>
+               <li>المواد التصنيعية: معدن + بلاستيك</li>
+               <li>حرارة التسخين المثالية: 120 درجة مئوية</li>
+            </ul>
+            <a href="#order_form" class="button">إشتروها الآن</a>
+            <div class="products_count">* لنهاية العرض متبقي <b>12</b> قطعة</div>
+         </section>
+         <!-- /work -->
+         <!-- order info 1 -->
+         <section class="order_info1_section">
+            <h2 class="title">خصائص المكواة Hair Comb</h2>
+            <div class="order_info_list1">
+               <div class="info_item clearfix">
+                  <div class="icon_block">
+                     <img src="benefits__benefit3_icon.png" alt="Hair Comb">
+                  </div>
+                  <div class="text_block">
+                     <h4>الإستخدام المريح</h4>
+                     <p>تمكنكم هذه المكواة المشطية من عمل أي تسريحة شعر ترغبونها في بضع دقائق!</p>
+                  </div>
+               </div>
+               <div class="info_item clearfix">
+                  <div class="icon_block">
+                     <img src="benefits__benefit4_icon.png" alt="Hair Comb">
+                  </div>
+                  <div class="text_block">
+                     <h4>الجودة</h4>
+                     <p>المكواة Hair Comb مصنوعة من مواد ذات جودة عالية, مما يجعلها تخدم لأطول فترة ممكنة.</p>
+                  </div>
+               </div>
+               <div class="info_item clearfix">
+                  <div class="icon_block">
+                     <img src="benefits__benefit5_icon.png" alt="Hair Comb">
+                  </div>
+                  <div class="text_block">
+                     <h4>السعر</h4>
+                     <p>السلعة تباع بسعر معتدل, وبمقدور الجميع إقتنائها بكل يسر. </p>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- /order info 1 -->
+         <!-- reviews 4 -->
+         <!-- <section class="reviews4_section">
+            <h2 class="title">آراء وتعليقات الزبائن</h2>
+            <div class="reviews_stats_block">
+               <p><b>98%</b> من زبائننا يوصون بإقتناء هذه السلعة</p>
+               <div class="line"></div>
+            </div>
+            <div class="reviews_list4 owl-carousel">
+               <div class="review_item">
+                  <img class="photo" src="r1.jpg" alt="Hair Combc">
+                  <div class="text_block">
+                     <div class="author_info">منصور عبدالله, 31 عام</div>
+                     <p>وأخيراً أدركت السبب وراء إنفاق النساء الكثير من الأموال على منتجات العناية بالشعر ... هذه المكواة توفر بالفعل الكثير من الوقت والجهد! أنا شخصياً لا أود إهدار الكثير من الوقت كل صباح في الحمام, ولهذا السبب حجزت مصففة الشعر هذه, وكان ذلك أفضل قرار إتخذته على الإطلاق! قمت ببعض الحركات الإنسيابية البطيئة, والآن أبدو كما لو أنني الممثل الشهير (جايسون موموا) من فيلم – أكوا مان, وأشعر وكأني تعافيت أكثر بعد تصحيحي لمنظر لحيتي الهمجي. إن رغبتم بتوفير الوقت المخصص لتصفيف لحاكم وإكسابها المظهر الحسن, لا تبخلوا واهدوا أنفسكم مصففة الشعر هذه.</p>
+                  </div>
+               </div>
+               <div class="review_item">
+                  <img class="photo" src="r2.jpg" alt="Hair Comb">
+                  <div class="text_block">
+                     <div class="author_info">نضال إبراهيم, 26 عام</div>
+                     <p>أنا راضٍ تماماً بشرائي لهذه الماكينة. أستعملها لأكثر من أسبوعين, وكل شيء يبدو على ما يرام! تسخن بسرعة عالية ولا تضر بالشعر. تأدي المطلوب منها بشكل جيد. أوصيكم بها!</p>
+                  </div>
+               </div>
+               <div class="review_item">
+                  <img class="photo" src="r3.jpg" alt="Hair Comb">
+                  <div class="text_block">
+                     <div class="author_info">أيمن عبدالهادي, 34 عام</div>
+                     <p>أهدتني زوجتي هذا المشط الكهربائي على عيد ميلادي. في البداية كنت متشككاً فيه, ثم قررت تجربته. الآن أستخدمه بشكل يومي. المشط سريع وفعال وبجودة عالية. شكراً لكم!</p>
+                  </div>
+               </div>
+            </div>
+         </section> -->
+         <!-- /reviews 4 -->
+         <!-- order info 2 -->
+         <section class="order_info2_section">
+            <h2 class="title">التوصيل والدفع</h2>
+            <div class="order_info_list2">
+               <div class="info_item">
+                  <img src="order_info2__delivery_image.jpg" alt="Hair Comb">
+                  <div class="text_block">
+                     <h4>التوصيل</h4>
+                     <p>التسليم سريع عن طريق البريد في جميع أنحاء البلاد. ليس عليك الانتظار طويلاً!</p>
+                  </div>
+               </div>
+               <div class="info_item">
+                  <img src="order_info2__payment_image.jpg" alt="Hair Comb">
+                  <div class="text_block">
+                     <h4>الإستلام</h4>
+                     <p>نحن لا نتطلب الدفع المسبق. ادفع فقط عند استلامك بعد فحص الجودة.</p>
+                  </div>
+               </div>
+               <div class="info_item">
+                  <img src="order_info2__guarantee_image.jpg" alt="Hair Comb">
+                  <div class="text_block">
+                     <h4>مكالمة</h4>
+                     <p>مندوبنا سيتواصل معكم للتأكد من صحة بيانات الحجز</p>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- /order info 2 -->
+         <!-- order 3 -->
+         <section class="offer_section offer3">
+            <div class="title_block">
+               <h1 class="main_title">Hair Comb</h1>
+               <p class="subtitle">مكواة تصفيف اللحى والشعر</p>
+            </div>
+            <div class="timer_block clearfix">
+               <p>العرض ينتهي في غضون:</p>
+               <!-- <div class="timer clearfix">
+                  <div class="timer_item">
+                     <div class="text">ساعة</div>
+                     <div class="count hours"></div>
+                  </div>
+                  <div class="timer_item">
+                     <div class="text">دقيقة</div>
+                     <div class="count minutes"></div>
+                  </div>
+                  <div class="timer_item">
+                     <div class="text">ثانية</div>
+                     <div class="count seconds"></div>
+                  </div>
+               </div> -->
+            </div>
+            <div class="image_block">
+               <img class="offer_image" src="m2.jpg" alt="Hair Comb">
+               <div class="discount_block">
+                  <div class="value">50%</div>
+                  <div class="text">خصم</div>
+               </div>
+            </div>
+            <div class="benefits_list clearfix">
+               <div class="benefit_item">الجودة مضمونة 100%</div>
+               <div class="benefit_item">العرض محدود</div>
+               <div class="benefit_item">الدفع عند الإستلام</div>
+            </div>
+            <div class="price_block clearfix">
+               <div class="price_item old">
+                  <div class="text">السعر الإعتيادي:</div>
+                  <div class="value"><b class="price_old15272"></b><b class="price_currency"></b></div>
+               </div>
+               <div class="price_item new">
+                  <div class="text"><span>توفير 50%</span></div>
+                  <div class="value"><b class="price_only15272"></b><b class="price_currency"></b></div>
+               </div>
+            </div>
+            <form id="order_form" class="order_form" action="/sendleads.php?" method="post" onsubmit="return cartTelCheck('phone', true, this, event); ">
+               <input class="field" type="text" name="client" placeholder="أدخل اسمك" required="" value="">
+               <input class="field" type="text" id="phone" name="tel" placeholder="أدخل رقم هاتفك" required="" value="">
+               <textarea class="field add-to-comment" placeholder="عنوانك المدينة ، المنطقة ، اسم البرج أو العدد. ووحدة العدد." required=""></textarea>
+               <input type="hidden" name="comments">
+               <button class="button">إشتروها الآن</button>
+               <!-- HIDDENS -->
+               
+               <!-- HIDDENS -->
+            </form>
+            <div class="products_count">* لنهاية العرض متبقي <b>12</b> قطعة</div>
+         </section>
+         <!-- /order 3 -->
+         <!-- footer -->
+         <footer class="footer_section">
+           
+         </footer>
+         <!-- /footer -->
+      </div>
+      <!-- scripts -->
+      <script src="owl.carousel.min.js"></script>
+      <script src="scripts.js"></script>
+      <!-- /scripts -->
+      
+      <style>
+         .loader { width: 100px; margin: 0 auto; }
+         .loader img { width: 100%; max-width: 100%; }
+      </style>
+      
+<script src="banner.js"></script>
+
+<!-- banner_script END -->
+<script type="text/javascript">
+   jQuery(function($){
+    $("form").on('submit', function(e) {
+      const $commetns = $("input[name='comments']");
+      $(".add-to-comment").each((i, el) => {
+        $commetns.val(`${$commetns.val()} ${$(el).val()}`)
+      })
+    })
+   })
+</script>
+   </body>
+</html>
